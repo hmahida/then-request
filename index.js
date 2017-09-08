@@ -76,7 +76,8 @@ function doRequest(method, url, options, callback) {
           new Response(
             res.statusCode,
             res.headers, Array.isArray(body) ? new Buffer(0) : body,
-            result.url
+            res.url.split('/')[2],
+            res.hostname
           )
         );
       }));
